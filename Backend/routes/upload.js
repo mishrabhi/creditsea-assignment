@@ -19,19 +19,15 @@ router.post("/", upload.single("file"), async (req, res) => {
 
   xml2js.parseString(xmlData, { explicitArray: false }, async (err, result) => {
     if (err) return res.status(500).json({ message: "XML parsing error" });
-    //      {
-    //   console.error("XML Parsing Error:", err);
-    //   return res.status(500).json({ message: "XML parsing error" }); //console
-    // }
-    // console.log("Parsed XML Data:", JSON.stringify(result, null, 2)); //console full parsed XML
+    console.log("Parsed XML Data:", JSON.stringify(result, null, 2));
     try {
-      const creditReport = result?.CreditReport || {};
-      const basicDetails = CreditReport?.BasicDetails || {};
-      const reportSummary = CreditReport?.ReportSummary || {};
-      const creditAccounts = CreditReport?.CreditAccounts?.Account || {};
+      const parsedData = result?.CreditReport || {};
+      const basicDetails = parsedData?.BasicDetails || {};
+      const reportSummary = parsedData?.ReportSummary || {};
+      const creditAccounts = parsedData?.CreditAccounts?.Account || [];
 
       const extractedData = {
-        name: basicDetails?.name || "N/A",
+        name: basicDetails?.Name || "N/A",
         mobilePhone: basicDetails?.MobilePhone || "N/A",
         PAN: basicDetails?.PAN || "N/A",
         creditScore: parseInt(basicDetails?.CreditScore) || 0,
