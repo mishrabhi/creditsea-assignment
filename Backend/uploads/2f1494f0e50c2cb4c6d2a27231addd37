@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CreditReport>
+    <BasicDetails>
+        <Name>John Doe</Name>
+        <MobilePhone>+1234567890</MobilePhone>
+        <PAN>ABCDE1234F</PAN>
+        <CreditScore>750</CreditScore>
+    </BasicDetails>
+
+    <ReportSummary>
+        <TotalAccounts>10</TotalAccounts>
+        <ActiveAccounts>6</ActiveAccounts>
+        <ClosedAccounts>4</ClosedAccounts>
+        <CurrentBalanceAmount>50000</CurrentBalanceAmount>
+        <SecuredAccountsAmount>30000</SecuredAccountsAmount>
+        <UnsecuredAccountsAmount>20000</UnsecuredAccountsAmount>
+        <Last7DaysCreditEnquiries>2</Last7DaysCreditEnquiries>
+    </ReportSummary>
+
+    <CreditAccounts>
+        <Account>
+            <CreditCard>HDFC Bank Credit Card</CreditCard>
+            <Bank>HDFC Bank</Bank>
+            <Address>123 Street, New York, USA</Address>
+            <AccountNumber>123456789</AccountNumber>
+            <AmountOverdue>1000</AmountOverdue>
+            <CurrentBalance>5000</CurrentBalance>
+        </Account>
+        <Account>
+            <CreditCard>ICICI Bank Credit Card</CreditCard>
+            <Bank>ICICI Bank</Bank>
+            <Address>456 Avenue, Los Angeles, USA</Address>
+            <AccountNumber>987654321</AccountNumber>
+            <AmountOverdue>500</AmountOverdue>
+            <CurrentBalance>7000</CurrentBalance>
+        </Account>
+    </CreditAccounts>
+</CreditReport>
